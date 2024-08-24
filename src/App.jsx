@@ -67,10 +67,13 @@ function App() {
     }
   }
   async function getToDo() {
-    const url = 'https://freeapi-app-production-3059.up.railway.app/api/v1/seed/todos';
+    const url = 'https://freeapi-app-production-3059.up.railway.app/api/v1/todos';
   
     try {
       const response = await fetch(url);
+      const data = await response.json();
+      console.log(data);
+      
   
       if (!response.ok) {
         throw new Error(`Request failed with status ${response.status}`);
